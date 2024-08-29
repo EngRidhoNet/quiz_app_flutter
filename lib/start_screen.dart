@@ -9,8 +9,12 @@ class StartScreen extends StatelessWidget {
       // jika kita ingin membuat widget di dalam satu layar maka kita
       // membuat dengan column
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+          ),
         ],
       ),
     );
