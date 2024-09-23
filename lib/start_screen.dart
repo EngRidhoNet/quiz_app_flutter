@@ -6,14 +6,42 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      // jika kita ingin membuat widget di dalam satu layar maka kita
-      // membuat dengan column
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset(
-            'assets/images/quiz-logo.png',
-            width: 300,
+          Opacity(
+            opacity: 0.8,
+            child: Image.asset(
+              'assets/images/quiz-logo.png',
+              width: 300,
+            ),
+          ),
+          const SizedBox(height: 50),
+          const Text(
+            'Learn Flutter The Fun Way!',
+            style: TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+              ),
+          ),
+          const SizedBox(height: 50),
+          ElevatedButton.icon(
+            onPressed: () {
+              // ...
+              
+            },
+            label: const Text('Start Quiz'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 211, 182, 216),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 50,
+                vertical: 20,
+              ),
+              textStyle: const TextStyle(
+                fontSize: 20,
+              ),
+            ),
+            icon: const Icon(Icons.quiz),
           ),
         ],
       ),
