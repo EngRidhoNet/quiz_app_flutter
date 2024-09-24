@@ -10,11 +10,18 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
-  var activeScreen = const StartScreen();
+  // maksudnya layar active juga bisa menjadi nol
+  Widget? activeScreen; 
+
+  @override
+  void initState() {
+    super.initState();
+    activeScreen = StartScreen(switchScreen);
+  }
 
   switchScreen() {
     setState(() {
-      Widget activeScreen = const QuestionsScreen();
+      activeScreen = const QuestionsScreen();
     });
   }
 
@@ -32,7 +39,7 @@ class _QuizState extends State<Quiz> {
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             )),
-            child: const StartScreen()),
+            child: activeScreen),
       ),
     );
   }
